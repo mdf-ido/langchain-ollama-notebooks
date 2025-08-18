@@ -14,10 +14,14 @@ class Config:
     """Configuration class for Ollama and LangChain settings."""
     
     def __init__(self):
-        self.ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-        self.default_model = os.getenv("OLLAMA_DEFAULT_MODEL", "llama2")
+        self.ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://192.168.1.81:11434")
+        self.model_name = os.getenv("OLLAMA_DEFAULT_MODEL", "gpt-oss")  # Changed from default_model to model_name
         self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
         self.log_level = os.getenv("LOG_LEVEL", "INFO")
+        
+        # Timeout settings for better connection handling
+        self.request_timeout = int(os.getenv("OLLAMA_TIMEOUT", "120"))  # 2 minutes default
+        self.connection_timeout = int(os.getenv("OLLAMA_CONNECTION_TIMEOUT", "60"))  # Increase for remote server
         self.max_tokens = int(os.getenv("MAX_TOKENS", "2048"))
         self.temperature = float(os.getenv("TEMPERATURE", "0.7"))
         
@@ -35,7 +39,7 @@ class Config:
         """Get Ollama configuration dictionary."""
         return {
             "base_url": self.ollama_base_url,
-            "model": self.default_model,
+            "model": self.model_name,  # Changed from default_model to model_name
             "temperature": self.temperature,
             "max_tokens": self.max_tokens
         }
