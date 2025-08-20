@@ -3,6 +3,10 @@ langchain>=0.1.0
 langchain-community>=0.0.10
 langchain-ollama>=0.1.0
 
+# Semantic Kernel
+semantic-kernel>=1.0.0
+semantic-kernel[ollama]>=1.0.0
+
 # Jupyter and Notebook support
 jupyter>=1.0.0
 notebook>=6.4.0
