@@ -7,6 +7,10 @@ langchain-ollama>=0.1.0
 semantic-kernel>=1.0.0
 semantic-kernel[ollama]>=1.0.0
 
+# PydanticAI
+pydantic-ai>=0.0.1
+pydantic>=2.0.0
+
 # Jupyter and Notebook support
 jupyter>=1.0.0
 notebook>=6.4.0
