@@ -14,8 +14,8 @@ class Config:
     """Configuration class for Ollama and LangChain settings."""
     
     def __init__(self):
-        self.ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://192.168.1.80:11434")
-        self.model_name = os.getenv("OLLAMA_DEFAULT_MODEL", "gpt-oss")  # Changed from default_model to model_name
+        self.ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://192.168.1.82:11434")
+        self.model_name = os.getenv("OLLAMA_DEFAULT_MODEL", "qwen3:14b")  # Changed from default_model to model_name
         self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
         self.log_level = os.getenv("LOG_LEVEL", "INFO")
         
